@@ -12,7 +12,7 @@ public class Simulation {
                 int minute = 0;
                 var process = new Process(random);
                 Actor actor = new Actor(checkEveryMinutes);
-                while (minute < 1000) {
+                while (minute < 91) {
                     minute++;
                     process.progress();
                     var result = actor.maybeCheck(process, minute);

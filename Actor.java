@@ -22,6 +22,8 @@ public class Actor {
             return Optional.empty();
         }
 
+        if (currentRuntime >= 90) return Optional.of(process.check());
+
         maxCheckMinute = currentRuntime;
 
         switch (strategy) {
@@ -31,7 +33,6 @@ public class Actor {
                 }
             }
             case HALF_LIFE -> {
-                if (currentRuntime == 90) return Optional.of(process.check());
                 if (currentRuntime == 83) return Optional.of(process.check());
                 if (currentRuntime == 67) return Optional.of(process.check());
                 if (currentRuntime == 45) return Optional.of(process.check());
